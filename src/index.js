@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./index.css";
+import VintedApi from './modules/VintedAPI';
 
 class Main extends React.Component {
     render() {
@@ -16,3 +17,7 @@ const app = document.createElement('div');
 app.id = "my-extension-root";
 document.body.appendChild(app);
 ReactDOM.render(<Main />, app);
+
+setTimeout(() => {
+    VintedApi.createDraft({ title: "test" });
+}, 5000);
